@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  padding: 10px;
+  margin-top: 30px;
+  cursor: crosshair;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+button:hover {
+  color: grey;
+}
+
+.output {
+  margin: 20px;
+  font-size: 2em;
+}
