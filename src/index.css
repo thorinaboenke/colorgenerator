@@ -8,8 +8,12 @@ body {
 }
 
 button {
+  border: 2px solid lightgrey;
+  background-color: #282c34;
+  color: lightgrey;
+  width: 400px;
   padding: 10px;
-  margin-top: 30px;
+  margin: 30px;
   cursor: crosshair;
   border-radius: 5px;
   font-size: 1em;
@@ -22,4 +26,16 @@ button:hover {
 .output {
   margin: 20px;
   font-size: 2em;
+}
+
+form {
+  width: 400px;
+  height: 50px;
+}
+
+p {
+  width: 80%;
+  padding: 2em;
+  margin: 50px auto 10px auto;
+  border-radius: 5px;
 }
