@@ -5,12 +5,14 @@ import randomcolor from 'randomcolor';
 // parent of everything, get rendered in index.js
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <RandomColor />
-        <DefinedColor />
-      </header>
-    </div>
+    <>
+      <div className="App">
+        <header className="App-header">
+          <RandomColor />
+          <DefinedColor />
+        </header>
+      </div>
+    </>
   );
 }
 
@@ -20,7 +22,9 @@ function RandomColor() {
   const [randomColor, setRandomColor] = useState(randomcolor());
   return (
     <div>
-      <p style={{ backgroundColor: randomColor }}>{randomColor}</p>
+      <div style={{ backgroundColor: randomColor }} className="colorField">
+        <p>{randomColor}</p>
+      </div>
       <button
         onClick={() => {
           setRandomColor(randomcolor());
@@ -56,7 +60,9 @@ function DefinedColor() {
   return (
     <>
       <div>
-        <p style={{ backgroundColor: definedColor }}>{definedColor}</p>
+        <div style={{ backgroundColor: definedColor }} className="colorField">
+          <p>{definedColor}</p>
+        </div>
         <button
           onClick={() => {
             setDefinedColor(randomcolor({ hue: hue, luminosity: luminosity }));
@@ -74,30 +80,30 @@ function DefinedColor() {
         </button>
       </div>
       <div>Select a Hue and Luminosity:</div>
-      <HueSelector hue={hue} handleHueChange={handleHueChange} />
-      <LuminositySelector
-        luminosity={luminosity}
-        handleLuminosityChange={handleLuminosityChange}
-      />
+      <div className="selectorContainer">
+        <HueSelector hue={hue} handleHueChange={handleHueChange} />
+        <LuminositySelector
+          luminosity={luminosity}
+          handleLuminosityChange={handleLuminosityChange}
+        />
+      </div>
     </>
   );
 }
 function HueSelector(props) {
   return (
-    <form>
-      <select
-        value={props.hue}
-        onChange={(e) => props.handleHueChange(e.currentTarget.value)}
-      >
-        <option value="red">red</option>
-        <option value="blue">blue</option>
-        <option value="green">green</option>
-        <option value="yellow">yellow</option>
-        <option value="orange">orange</option>
-        <option value="purple">purple</option>
-        <option value="pink">pink</option>
-      </select>
-    </form>
+    <select
+      value={props.hue}
+      onChange={(e) => props.handleHueChange(e.currentTarget.value)}
+    >
+      <option value="red">red</option>
+      <option value="blue">blue</option>
+      <option value="green">green</option>
+      <option value="yellow">yellow</option>
+      <option value="orange">orange</option>
+      <option value="purple">purple</option>
+      <option value="pink">pink</option>
+    </select>
   );
 }
 
