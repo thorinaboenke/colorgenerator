@@ -1,4 +1,4 @@
-React Random Color Generator
+### React Random Color Generator
 
 Will generate a square of a random color labelled with the corresponding hex code.
 
