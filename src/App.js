@@ -109,7 +109,6 @@ function HueSelector(props) {
 
 function LuminositySelector(props) {
   return (
-    <form>
       <select
         value={props.luminosity}
         onChange={(e) => props.handleLuminosityChange(e.currentTarget.value)}
@@ -117,6 +116,5 @@ function LuminositySelector(props) {
         <option value="dark">dark</option>
         <option value="light">light</option>
       </select>
-    </form>
   );
 }
